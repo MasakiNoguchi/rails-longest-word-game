@@ -1,0 +1,20 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="head">The Longest Word!</h1>
+  <div class="game">
+    <% @letters.each do |letter| %>
+      <span class="letter"><%= letter %></span>
+    <% end %>
+  </div>
+  <div class="form">
+    <form action="/score">
+      <p>What is the longest word you can find?</p>
+      <%= hidden_field_tag :letters, @letters %>
+      <input type="text" name="word">
+      <input type="submit" value="Submit!">
+    </form>
+  </div>
+</body>
